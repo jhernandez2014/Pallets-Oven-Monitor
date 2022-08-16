@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Profile</title>
+		<% include ./partials/assets %> 
+	</head>
+	<body>
+		<% include ./partials/header %>  		 	
+		<div class="container-fluid main-container">
+	  		<div class="col-md-10 col-md-offset-1">
+				<div class="page-header text-center">
+					<h1><span class="fa fa-user"></span> Perfil</h1>
+					<div id="messageUpdate"></div>
+				</div>
+				<div class="row">
+
+					<!-- LOCAL INFORMATION -->
+					<div class="col-sm-8 col-sm-offset-2">
+						<div class="well">
+									<br>
+									<input type="hidden" id="idUser" value="<%= user.id %>">
+									<div class="row">
+										<div class="col-sm-2">
+											<strong>nickname</strong>: 
+										</div>	
+										<div class="col-sm-8 col-sm-offset-1">
+											<input id="nickname" class="form-control" type="text" placeholder="<%= user.nickname %>"></input><br>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-2">
+											<strong>username</strong>:
+										</div>	
+										<div class="col-sm-8 col-sm-offset-1">
+											<input id="user" class="form-control" type="text" placeholder="<%= user.username %>"></input><br>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-2">
+											<strong>password</strong>:
+										</div>	
+										<div class="col-sm-8 col-sm-offset-1">
+											<input id="newPsw" class="form-control" type="password" placeholder="Password"requiered></input>
+										</div>
+									</div><br>
+									<input type="hidden" id="psw" value="<%= user.password %>" ></input>
+									<div class="row">
+										<div class="col-sm-10 col-sm-offset-1">
+											<button class="btn btn-success pull-right" onclick="updateUser()">Actualizar</button>
+										</div>
+									</div>
+								</p>
+						</div>
+					</div>
+				</div>
+	  		</div>
+	  	</div>
+
+		<% include ./partials/modal_config %> 
+	</body>
+</html>

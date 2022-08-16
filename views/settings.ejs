@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Config</title>
+		<% include ./partials/assets %> 
+	</head>
+<body>
+    <% include ./partials/header %>  	
+	  <div class="container-fluid main-container">
+  		<div class="col-md-10 col-md-offset-1">
+  			<div class="page-header text-center">	  				
+				<h1><span class="fa fa-cogs"></span> Informacion Default</h1>	
+				<% if (message.length > 0) { %>
+	                <div class="alert alert-success fade in">
+	                	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	                	<%= message %>
+	                </div>
+	            <% } %>					
+			</div>
+			<form action="/update_info" method="post">
+				<div class="row">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      <div class="col-sm-4 col-md-4">
+                      	<div class="form-group">
+                      		<label for="titulo">Titulo:</label>
+	                      <input type="text" class="form-control text-center" name="title" value="<%= dataDefault[0].title %>">
+	                    </div>
+	                  </div>
+                      <div class="col-sm-4 col-md-4">
+                          <div class="form-group">
+                            <label for="ciclo">Ciclo:</label>
+                            <input type="text" class="form-control" name="cycle" value="<%= dataDefault[0].cycle %>">
+                          </div>                                           
+                      </div> 
+                      <div class="col-sm-4 col-md-4">
+                        <div class="form-group">
+                          <label for="certificado">Certificado N.:</label>
+                          <input type="text" class="form-control" name="certificate" value="<%= dataDefault[0].certificate %>">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                     <div class="col-sm-8 col-md-8">
+                       <div class="form-group">
+                         <label for="institucion">Institucion:</label>
+                          <input type="text" class="form-control" name="institution" value="<%= dataDefault[0].institution %>">
+                       </div>                     
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="telefono">Tel.:</label>
+                          <input type="text" class="form-control" name="phone" value="<%= dataDefault[0].phone %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="calle">Calle-Numero:</label>
+                          <input type="text" class="form-control" name="street" value="<%= dataDefault[0].street %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="colonia">Colonia:</label>
+                          <input type="text" class="form-control" name="suburb" value="<%= dataDefault[0].suburb %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="municipio">Municipi-Estado:</label>
+                          <input type="text" class="form-control" name="town" value="<%= dataDefault[0].town %>">
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <!-- Tarimas -->
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">                   
+                     <div class="col-sm-6 col-md-6">
+                       <div class="form-group">
+                         <label for="producto">Tipo de productos:</label>
+                          <input type="text" class="form-control" name="product" value="<%= dataDefault[0].product %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6">
+                       <div class="form-group">
+                         <label for="tarima">Tipo de tarimas:</label>
+                          <input type="text" class="form-control" name="scaffold" value="<%= dataDefault[0].scaffold %>">
+                       </div>
+                     </div>              
+                     <div class="col-sm-4 col-md-4">
+                        <div class="form-group">                     
+                          <label for="">Presencia de corteza:</label>
+                          <select name="crust" class="form-control">
+                            <% if (dataDefault[0].crust == 1 ) {%>
+                              <option value="1" selected>SI</option>
+                              <option value="0" >NO</option>
+                            <% }else{ %>
+                              <option value="1" >SI</option>
+                              <option value="0" selected>NO</option>
+                            <% }%>
+                          </select>
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">                     
+                        <div class="form-group">
+                          <label for="grosor">Grosor:</label>
+                          <input type="text" class="form-control" name="thick" value="<%= dataDefault[0].thick %>">   
+                        </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">                     
+                        <div class="form-group">
+                          <label for="cantidad">Cantidad:</label>
+                          <input type="number" class="form-control" name="quantity" value="<%= dataDefault[0].quantity %>">   
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="col-md-12">
+                     	<input type="hidden" name="id" value="<%= dataDefault[0].id %>">
+                       <button type="submit" id="update" class="btn btn-success pull-right">Actualizar</button>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+			</form>
+  		</div>
+  	</div>
+    <% include ./partials/modal_config %> 
+</body>
+</html>

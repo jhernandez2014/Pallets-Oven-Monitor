@@ -1,0 +1,175 @@
+/* Chart*/
+:root{
+    --brown: #795548;
+    --blue: #0379CA;
+    --green: #5cb85c;
+    --purple: #9947BB;
+    --red: #d9534f;
+    --yellow: #f1c40f;
+    --black: #000000;
+}
+
+#chart1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ct-series-a .ct-line {
+    stroke: var(--brown);
+}
+.ct-series-b .ct-line {
+    stroke: var(--blue);
+}
+.ct-series-c .ct-line {
+    stroke: var(--green);
+  /*stroke: #7101BB;*/
+}
+.ct-series-d .ct-line {
+    stroke: var(--purple);
+}
+.ct-series-e .ct-line {
+    stroke: var(--red);
+}
+.ct-series-f .ct-line {
+    stroke: var(--yellow);
+}
+.ct-series-g .ct-line {
+  stroke: var(--black);
+}
+
+.ct-line {
+  stroke-width: 2px;
+}
+.ct-label, .ct-axis-title{
+	font-size: 9px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: black;
+}
+
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading span {
+	font-size: 15px;
+}
+
+/* Custom Colored Panels */
+
+.huge,
+.huge span {
+    font-size: 20px;
+}
+.panel-brown{
+    background-color: var(--brown);
+    border-color: var(--brown);
+    color: #fff;
+}
+
+.panel-yellow{
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: #fff;
+}
+
+.panel-purple{
+    background-color: var(--purple);
+    border-color: var(--purple);
+    color: #fff;
+}
+
+.panel-blue {
+    border-color: #0379CA;
+}
+
+.panel-blue > .panel-heading {
+    border-color: #0379CA;
+    color: #fff;
+    background-color: #0379CA;
+}
+
+.panel-blue > a {
+    color: #0379CA;
+}
+
+.panel-blue > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-blue {
+    border-color: #0379CA;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+
+span.status{
+    padding-left: 10px;
+}
+.export{
+    position: relative;
+    top: 0;
+}
+.export i{
+    font-size: 20px;
+}
+span.ct-label.ct-horizontal.ct-end {
+    position: relative;
+    top: .5em;
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+}
+span#temperature, span#time{
+    position: relative;
+}
+span#temperature{
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    left: 0;
+    bottom: 200px;
+}
+span#time {
+    left: 200px;
+    bottom: 0;
+}
+
+#report div{
+    margin: 5px 0;
+}

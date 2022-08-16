@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% include ./partials/assets %> 
+  </head>
+  <body >
+    <% include ./partials/header %> 
+    <div class="container-fluid main-container">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="row" >
+            <div class="col-md-12">
+              <!-- Panel Cabesera -->
+              <div id="messageUpdate"></div>
+             
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  Cabecera
+                  <span class="pull-right clickable" ><i class="fa fa-chevron-up"></i></span>
+                </div>
+                <div class="panel-body">
+                  <!-- Cabecera -->
+                  <div class="row" style="margin-bottom: 15px;">  
+                    <div class="col-md-12">                                  
+                        <div class="col-sm-10 col-md-10">
+                          <input type="text" class="form-control text-center" id="title" value="<%= dataDefault[0].title %>">
+                        </div>
+                        <div class="col-sm-2 col-md-2">
+                          <h5 class="text-right">Numero: #<span id="id"><%= folio %></span></h5>
+                        </div> 
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      <div class="col-sm-6 col-md-6">
+                          <div class="form-group">
+                            <label for="ciclo">Ciclo:</label>
+                            <input type="text" class="form-control" id="cycle" name="ciclo" value="<%= dataDefault[0].cycle %>">
+                          </div>                                           
+                      </div> 
+                      <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <label for="certificado">Certificado N.:</label>
+                          <input type="text" class="form-control" id="certificate" name="certificado" value="<%= dataDefault[0].certificate %>">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                     <div class="col-sm-8 col-md-8">
+                       <div class="form-group">
+                         <label for="institucion">Institucion:</label>
+                          <input type="text" class="form-control" id="institution" name="institucion" value="<%= dataDefault[0].institution %>">
+                       </div>                     
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="telefono">Tel.:</label>
+                          <input type="text" class="form-control" id="phone" name="telefono" value="<%= dataDefault[0].phone %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="calle">Calle-Numero:</label>
+                          <input type="text" class="form-control" id="street" name="calle" value="<%= dataDefault[0].street %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="colonia">Colonia:</label>
+                          <input type="text" class="form-control" id="suburb" name="colonia" value="<%= dataDefault[0].suburb %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="municipio">Municipi-Estado:</label>
+                          <input type="text" class="form-control" id="town" name="municipio" value="<%= dataDefault[0].town %>">
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <!--Empresa <strong>Cliente</strong>-->
+                  <h4 class="text-center"><strong>Cliente</strong></h4>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                     <div class="col-sm-8 col-md-8">
+                       <div class="form-group">
+                         <label for="company">Empresa:</label>
+                          <input type="text" class="form-control" id="company" name="company" value="<%= dataDefault[0].company %>">
+                       </div>                     
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="cp">Codigo Postal:</label>
+                          <input type="text" class="form-control" id="cp" name="cp" value="<%= dataDefault[0].cp %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="calle">Calle-Numero:</label>
+                          <input type="text" class="form-control" id="c_street" name="calle" value="<%= dataDefault[0].c_street %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="colonia">Colonia:</label>
+                          <input type="text" class="form-control" id="c_suburb" name="colonia" value="<%= dataDefault[0].c_suburb %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">
+                       <div class="form-group">
+                         <label for="municipio">Municipi-Estado:</label>
+                          <input type="text" class="form-control" id="c_town" name="municipio" value="<%= dataDefault[0].c_town %>">
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <!-- Tarimas -->
+                  <h4 class="text-center"><strong>Tarimas</strong></h4>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">                   
+                     <div class="col-sm-6 col-md-6">
+                       <div class="form-group">
+                         <label for="producto">Tipo de productos:</label>
+                          <input type="text" class="form-control" id="product" name="producto" value="<%= dataDefault[0].product %>">
+                       </div>
+                     </div>
+                     <div class="col-sm-6 col-md-6">
+                       <div class="form-group">
+                         <label for="tarima">Tipo de tarimas:</label>
+                          <input type="text" class="form-control" id="scaffold" name="tarima" value="<%= dataDefault[0].scaffold %>">
+                       </div>
+                     </div>              
+                     <div class="col-sm-4 col-md-4">
+                        <div class="form-group">                     
+                          <label for="">Presencia de corteza:</label>
+                          <select class="form-control" id="crust">
+                            <% if (dataDefault[0].crust == 1) {%>
+                              <option value="1" selected>SI</option>
+                              <option value="0" >NO</option>
+                            <% }else{ %>
+                              <option value="1" >SI</option>
+                              <option value="0" selected>NO</option>
+                            <% }%>
+                          </select>
+                       </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">                     
+                        <div class="form-group">
+                          <label for="grosor">Grosor:</label>
+                          <input type="text" class="form-control" id="thick" name="grosor" value="<%= dataDefault[0].thick %>">   
+                        </div>
+                     </div>
+                     <div class="col-sm-4 col-md-4">                     
+                        <div class="form-group">
+                          <label for="cantidad">Cantidad:</label>
+                          <input type="number" class="form-control" id="quantity" name="cantidad" value="<%= dataDefault[0].quantity %>">   
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="col-md-12" id="btnShowUpdate"> 
+                      <% if (update == "true") {%>
+                        <button class="btn btn-info pull-left" onclick="report('reportData')">Export PDF <i class="fa fa-download" ></i></button>
+                        <a style="margin-left: 20px;" class="btn btn-info" href="/data/file.csv" download>
+                          csv <i class="fa fa-file-text-o"></i>
+                        </a>
+                        <button class="btn btn-success pull-right" id="btnUpdate">Actualizar</button>     
+                      <%};%>               
+                     </div>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+              <!-- Sensores -->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  Sensores
+                  <span class="pull-right clickable"><i class="fa fa-chevron-up"></i></span>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">                        
+                        <div class="panel panel-brown">
+                          <div class="panel-heading">
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <i class="fa fa-line-chart fa-3x"></i>
+                              </div>
+                              <div class="col-sm-9 text-right">
+                                <div class="huge" > <span id="sensor0"></span> °C</div>
+                                <div>Sensor 0</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                          <div class="panel panel-blue">
+                              <div class="panel-heading">
+                                  <div class="row">
+                                      <div class="col-sm-3">
+                                          <i class="fa fa-line-chart fa-3x"></i>
+                                      </div>
+                                      <div class="col-sm-9 text-right">
+                                          <div class="huge"><span id="sensor1"></span> °C</div>
+                                          <div>Sensor 1</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                          <div class="panel panel-green">
+                              <div class="panel-heading">
+                                  <div class="row">
+                                      <div class="col-sm-3">
+                                          <i class="fa fa-line-chart fa-3x"></i>
+                                      </div>
+                                      <div class="col-sm-9 text-right">
+                                          <div class="huge" > <span id="sensor2"></span>   °C</div>
+                                          <div>Sensor 2</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                          <div class="panel panel-purple">
+                              <div class="panel-heading">
+                                  <div class="row">
+                                      <div class="col-sm-3">
+                                          <i class="fa fa-line-chart fa-3x"></i>
+                                      </div>
+                                      <div class="col-sm-9 text-right">
+                                          <div class="huge"><span id="sensor3"></span> °C</div>
+                                          <div>Sensor 3</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                          <div class="panel panel-red">
+                              <div class="panel-heading">
+                                  <div class="row">
+                                      <div class="col-sm-3">
+                                          <i class="fa fa-line-chart fa-3x"></i>
+                                      </div>
+                                      <div class="col-sm-9 text-right">
+                                          <div class="huge"> <span id="sensor4"></span> °C</div>
+                                          <div>Sensor 4</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <i class="fa fa-line-chart fa-3x"></i>
+                                    </div>
+                                    <div class="col-sm-9 text-right">
+                                        <div class="huge" > <span id="sensor5"></span> °C</div>
+                                        <div>Sensor 5</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>          
+            </div>
+          </div>
+
+          <div class="row" id="verifySensors">
+            <div class="col-md-12" >
+              <div id="message"> 
+              </div>
+              <div class="row text-center" style="display: flex;align-items: center;" >
+                <% if(data[0]){ %> 
+                  <%if ( (showDate == "false")&&( data[0].status==true ) ) {%>
+                    <div class="col-sm-4">
+                      <p><strong>Inicio</strong></p>
+                      <span id="spanStart"><%= start %></span>
+                    </div>
+                    <div class="col-sm-4">
+                      <p><strong>Fin</strong></p>
+                      <span id="spanStop"><%= end %></span>
+                    </div>
+                    <div class="col-sm-4 export">
+                      <button class="btn btn-info" onclick="printContent('test')"><span>Export PDF <i class="fa fa-download" ></i></span></button>
+                    </div>
+                  <%} if ( data[0].status==false ){%>
+                    <div class="col-sm-4">
+                      <button class="btn btn-danger" id="btnStart">
+                        <span id="txtStart">Detener</span>
+                        <span class="status"><i class="fa fa-stop"></i></span>
+                      </button>
+                    </div>
+                    <div class="col-sm-4">
+                      <span id="spanStart"><%= start %></span>
+                    </div>
+                    <div class="col-sm-4">
+                      <span id="spanStop">---</span>
+                    </div>
+                  <%};%>
+                <% } %> 
+
+              <%if (showDate == "true"){%>
+                <div class="container">
+                  <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-sm-4">
+                      <button class="btn btn-success" id="btnStart">
+                        <span id="txtStart">Iniciar</span>
+                        <span class="status"><i class="fa fa-play"></i></span>
+                      </button>
+                    </div>
+                    <div class="col-sm-4">
+                      <span id="spanStart">---</span>
+                    </div>
+                    <div class="col-sm-4">
+                      <span id="spanStop">---</span>
+                    </div>
+                  </div>
+                   <div class="row">                
+                  <div id="test">
+                    <div id="head"></div>
+                      <div id="newChart" class="col-xs-12 col-sm-12 col-md-12">                  
+                        
+                      </div>
+                  </div>
+                </div>
+                </div>
+              <%};%>
+
+              </div>
+              <% if (data[0]) { %>
+                <% if ((showDate == "false")||(data[0].status==false)){ %>
+                  <div class="row">                
+                    <div id="test">
+                      <div id="head"></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12">                  
+                        <div class="ct-chart" align="center" id="chart1"></div>
+                      </div>
+                    </div>
+                  </div>
+                <%}%>               
+              <% } %>
+            </div>
+            <!-- #7101BB ; #0379CA-->
+          </div>
+        </div>
+    </div>
+    <div id="reportData">
+      <div class="container" id="report">   
+      </div>
+    </div>
+    <% include ./partials/modal_config %> 
+    <script src="/js/chart.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Dashboard</title>
+		<% include ./partials/assets %> 
+	</head>
+	<body>
+		<% include ./partials/header %>  	
+		<div class="container-fluid main-container">
+	  		<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+	  			<div class="page-header text-center">
+					<h1><span class="fa fa-tasks"></span> Ciclos de horneado
+						<a href="/chart/new" id="btnNew" class="btn btn-success pull-right" role="button">Nuevo</a>
+					</h1>
+				</div>
+				<span id="demo"></span>
+			  	<div>
+					<%if (empty != "true"){ %>
+						<table class="table table-striped custab">
+						    <thead>							    
+						        <tr>
+						            <th>Ciclo</th>
+						            <th>Numero</th>
+						            <th>Certificado</th>
+						            <th>Estado</th>
+						            <th class="text-center">Action</th>
+						        </tr>
+						    </thead>						   	
+						    <%for(var i=0;i<data[0].id.length;i++){%> 
+					            <tr>
+					                <td><%= data[0].cycle[i]%></td>
+					                <td><%= data[0].id[i] %></td>
+					                <td><%= data[0].certificate[i] %></td>
+					                <% if (data[0].status[i] == 1){%>
+					                	<td>Finalizado</td>
+					                <% }else{ %>
+					               		<td>Proceso</td>
+					                <%}%>
+					                
+					                <td class="text-center">
+					                	<a href="/chart/<%=data[0].id[i]%>" class="btn btn-info btn-xs">
+					                		<span class="fa fa-eye"></span> View
+					                	</a> 
+					                </td>
+					            </tr>
+				            <%}%>	
+
+					    </table>
+					    <% if (pageCount > 1) { %>
+					        <ul class="pagination">
+					            <% if (currentPage > 1) { %>
+					                <li><a href="/?page=1">&laquo;</a></li>
+					            <% } %>
+					            <% var i = 1;
+					            if (currentPage > pageCount) {
+					                i = +currentPage - (pageCount-1);
+					            } %>
+					            <% if (i !== 1) { %>
+					                <li class="disabled"><a href="#">...</a></li>
+					            <% } %>
+					            <% for (i; i<=pageCount; i++) { %>
+					                <% if (currentPage == i) { %>
+					                    <li class="active"><span><%= i %> <span class="sr-only">(current)</span></span></li>
+					                <% } else { %>
+					                    <li><a href="/?page=<%= i %>"><%= i %></a></li>
+					                <% } %>
+					                <% if (i == (+currentPage + (pageCount-1))) { %>
+					                    <li class="disabled"><a href="#">...</a></li>
+					                <% break; } %>
+					            <% } %>
+					            <% if (currentPage != pageCount) { %>
+					                <li><a href="/?page=<%= pageCount %>">&raquo;</a></li>
+					            <% } %>
+					        </ul>
+					    <% } %>
+					<%}else{%>
+						<div class="text-center">
+							<h3>Sin Registros de Ciclos</h3>
+						</div>
+				    <%} %>
+	  			</div>
+	  		</div>
+	  	</div>
+		  
+		
+		<% include ./partials/modal_config %> 
+		<div id="clockDiv"></div>
+
+		
+
+		<script type="text/javascript" src="/js/function.js"></script>
+		<!-- <script type="text/javascript" src="/js/config.js"></script> -->
+
+	</body>
+</html>

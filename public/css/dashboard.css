@@ -1,0 +1,61 @@
+a,
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1.page-header {
+    margin-top: -5px;
+}
+
+.sidebar {
+	padding-left: 0;
+}
+
+.main-container { 
+	background: #FFF;
+	padding-top: 15px;
+	margin-top: -20px;
+}
+
+.footer {
+	width: 100%;
+}  
+
+:focus {
+	outline: none;
+}
+
+/* small screen */
+@media (max-width: 768px) {
+	/* Dropdown tweek */
+	#dropdown .panel-body .navbar-nav {
+		margin: 0;
+	}
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.blue{
+	background-color: rgba(41, 128, 185,1.0)!important;
+	color: #fff!important;
+}
+.dropdown-header,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover ,
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
+	color: #fff!important;
+    background-color: transparent;
+}
